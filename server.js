@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// CORS Headers allow karein taaki aapki website block na ho
+// CORS Headers allow karein
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
@@ -11,8 +11,9 @@ app.use((req, res, next) => {
   next();
 });
 
+// Root Route (Ye add karne se 'Cannot GET /' nahi aayega)
 app.get('/', (req, res) => {
-  res.send('Proxy Server is Running Live!');
+  res.send('NetSportX Proxy Server is Running Live!');
 });
 
 app.get('/proxy', async (req, res) => {
